@@ -1,7 +1,10 @@
 #!/usr/bin/ruby
 
 require './lib/beer_presenter'
+
+#Create instance of scraper and scrape the webpage for information
 scraper = BeerPresenter::Scraper.new
 scraper.scrape
 
+#Start the CLI for user interaction
 BeerPresenter::CLI.new.call

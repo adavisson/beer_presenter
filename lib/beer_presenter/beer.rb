@@ -10,6 +10,7 @@ class BeerPresenter::Beer
     @description = description
     @rating = rating
 
+    #add to all
     @@all << self
 
     #add to brewery list
@@ -23,6 +24,7 @@ class BeerPresenter::Beer
     @@all
   end
 
+  #method for returning all details about a specific beer
   def self.beer_detail(index)
     if self.bounds_check(index)
       puts "\n\n"
@@ -36,9 +38,13 @@ class BeerPresenter::Beer
     end
   end
 
-  #put in module
+  #put in module########################################
+  
+  #check if user input is a valid option
   def self.bounds_check(index)
     index.between?(1,self.all.length)
   end
+
+  ######################################################
 
 end

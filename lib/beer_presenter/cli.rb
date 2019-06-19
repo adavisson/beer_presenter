@@ -3,16 +3,6 @@ class BeerPresenter::CLI
   def call
 
     input = ""
-#############################################################################
-#    miller = BeerPresenter::Beer.new()
-#    budweiser = BeerPresenter::Beer.new(name = "Budweiser", style = "Lager", brewery = "Busch", description = "A less good beer", rating = 3.5)
-#
-#    pilsner = BeerPresenter::Style.new("Pilsner")
-#    lager = BeerPresenter::Style.new("Lager")
-#    
-#    miller_coors = BeerPresenter::Brewery.new("Miller Coors")
-#    busch = BeerPresenter::Brewery.new("Busch")
-#############################################################################    
 
     until input == 'exit'
       puts "\n\nWelcome to Top 50 Beers on Untappd"

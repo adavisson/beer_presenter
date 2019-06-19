@@ -11,6 +11,7 @@ class BeerPresenter::Scraper
     @list = page.css(".beer-item")
   end
 
+  #Notes on how to grab each element needed
   #beer_name: list.css(".name").text.strip
   #style_name: list.css(".style")[1].text.strip
   #brewery_name: list.css(".style a").text.strip
@@ -18,6 +19,8 @@ class BeerPresenter::Scraper
   #description: list.css(".desc")[1].text.strip   SANITIZE TO REMOVE "READ LESS"
   #rating: list.css(".num").text.strip
 
+  #This method scrapes the page and creates new Beer objects
+  #It also determines if new Brewery or Style objects need to be created
   def scrape
     
     i = 0
@@ -48,6 +51,7 @@ class BeerPresenter::Scraper
 
   end
 
+  #Cleaner methods for creating objects
   def create_beer(name, style, brewery, description, rating)
     BeerPresenter::Beer.new(name, style, brewery, description, rating)
   end
