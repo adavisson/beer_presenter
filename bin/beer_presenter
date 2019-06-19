@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
 require './lib/beer_presenter'
-
+scraper = BeerPresenter::Scraper.new
+scraper.scrape
 BeerPresenter::CLI.new.call
