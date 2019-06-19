@@ -15,7 +15,7 @@ class BeerPresenter::Scraper
   #style_name: list.css(".style")[1].text.strip
   #brewery_name: list.css(".style a").text.strip
   #abv: list.css(".abv").text.strip
-  #description: list.css(".desc")[1].text.strip
+  #description: list.css(".desc")[1].text.strip   SANITIZE TO REMOVE "READ LESS"
   #rating: list.css(".num").text.strip
 
   def scrape
@@ -25,18 +25,18 @@ class BeerPresenter::Scraper
     while i < self.list.length
 
       if !(BeerPresenter::Style.exist?(self.list[i].css(".style")[1].text.strip))
-        style = BeerPresenter::Style.new(self.list[i].css(".style")[1].text.strip)
+        style = self.create_style(self.list[i].css(".style")[1].text.strip)
       else
         style = BeerPresenter::Style.retrieve (self.list[i].css(".style")[1].text.strip)
       end
 
       if !(BeerPresenter::Brewery.exist?(self.list[i].css(".style a").text.strip))
-        brewery = BeerPresenter::Brewery.new(self.list[i].css(".style a").text.strip)
+        brewery = self.create_brewery(self.list[i].css(".style a").text.strip)
       else
         brewery = BeerPresenter::Brewery.retrieve(self.list[i].css(".style a").text.strip)
       end
 
-      BeerPresenter::Beer.new(self.list[i].css(".name").text.strip, #beer-name
+      self.create_beer(self.list[i].css(".name").text.strip, #beer-name
                               style, #style
                               brewery, #brewery
                               self.list[i].css(".desc")[1].text.strip, #description
@@ -48,16 +48,16 @@ class BeerPresenter::Scraper
 
   end
 
-  def create beer
-    #initialize beer and check if brewery and style need to be created
+  def create_beer(name, style, brewery, description, rating)
+    BeerPresenter::Beer.new(name, style, brewery, description, rating)
   end
 
-  def create_brewery
-    #initialize brewery
+  def create_brewery(name)
+    BeerPresenter::Brewery.new(name)
   end
 
-  def create_style
-    #initialize style
+  def create_style(name)
+    BeerPresenter::Style.new(name)
   end
 
 end
