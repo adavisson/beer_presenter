@@ -1,4 +1,4 @@
-class BeerPresenter::Brewery
+class BeerPresenter::Brewery < BeerPresenter::Common
 
   attr_accessor :beers, :name, :styles
   @@all = []
@@ -29,29 +29,5 @@ class BeerPresenter::Brewery
       puts "\n\nThe number you entered is invalid. Please try again."
     end
   end
-
-  #put in module#############################################
-
-  #Check input from user is valid
-  def self.bounds_check(index)
-    index.between?(1,self.all.length)
-  end
-
-  #add beer to instance beers array
-  def add_beer(beer)
-    self.beers << beer
-  end
-
-  #check if a brewery exists yet
-  def self.exist?(name)
-    self.all.any?{|style| style.name == name}
-  end
-
-  #return brewery instance of matching name
-  def self.retrieve(name)
-    self.all.detect{|style| style.name == name}
-  end
-
-  ###########################################################
 
 end 

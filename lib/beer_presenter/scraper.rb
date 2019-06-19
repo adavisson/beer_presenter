@@ -1,7 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-
 class BeerPresenter::Scraper
   
   attr_reader :list, :page

@@ -1,4 +1,4 @@
-class BeerPresenter::Beer
+class BeerPresenter::Beer < BeerPresenter::Common
 
   attr_accessor :brewery, :description, :name, :rating, :style
   @@all = []
@@ -37,14 +37,5 @@ class BeerPresenter::Beer
       puts "\n\nThe number you entered is invalid. Please try again"
     end
   end
-
-  #put in module########################################
-  
-  #check if user input is a valid option
-  def self.bounds_check(index)
-    index.between?(1,self.all.length)
-  end
-
-  ######################################################
 
 end
