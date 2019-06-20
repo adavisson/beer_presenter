@@ -38,7 +38,7 @@ class BeerPresenter::Scraper
       self.create_beer(self.list[i].css(".name").text.strip, #beer-name
                               style, #style
                               brewery, #brewery
-                              self.list[i].css(".desc")[1].text.strip, #description
+                              self.list[i].css(".desc")[1].text.chomp(" Read Less"), #description
                               self.list[i].css(".num").text.strip #rating
       )
 
