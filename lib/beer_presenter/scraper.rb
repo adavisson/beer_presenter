@@ -26,7 +26,7 @@ class BeerPresenter::Scraper
       if !(BeerPresenter::Style.exist?(self.list[i].css(".style")[1].text.strip))
         style = self.create_style(self.list[i].css(".style")[1].text.strip)
       else
-        style = BeerPresenter::Style.retrieve (self.list[i].css(".style")[1].text.strip)
+        style = BeerPresenter::Style.retrieve(self.list[i].css(".style")[1].text.strip)
       end
 
       if !(BeerPresenter::Brewery.exist?(self.list[i].css(".style a").text.strip))

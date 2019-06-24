@@ -1,6 +1,6 @@
 class BeerPresenter::Style < BeerPresenter::Common
 
-  attr_accessor :beers, :breweries, :name
+  attr_accessor :beers, :name
   @@all = []
 
   def initialize(name)

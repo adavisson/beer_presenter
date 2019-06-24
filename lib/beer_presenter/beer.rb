@@ -3,7 +3,7 @@ class BeerPresenter::Beer < BeerPresenter::Common
   attr_accessor :brewery, :description, :name, :rating, :style
   @@all = []
 
-  def initialize(name = nil, style = nil, brewery = nil, description = nil, rating = nil)
+  def initialize(name, style, brewery, description, rating)
     @name = name
     @style = style
     @brewery = brewery
