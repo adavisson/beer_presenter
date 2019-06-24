@@ -14,7 +14,7 @@ class BeerPresenter::Common
     self.beers << beer
   end
 
-  #Check if style exists yet
+  #Check if style/brewery exists yet
   def self.exist?(name)
     self.all.any?{|style| style.name == name}
   end
