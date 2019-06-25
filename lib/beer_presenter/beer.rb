@@ -1,4 +1,7 @@
-class BeerPresenter::Beer < BeerPresenter::Common
+class BeerPresenter::Beer
+
+  extend BeerPresenter::Common::ClassMethods
+  include BeerPresenter::Common::InstanceMethods
 
   attr_accessor :brewery, :description, :name, :rating, :style
   @@all = []

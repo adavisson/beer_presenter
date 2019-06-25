@@ -1,7 +1,6 @@
 class BeerPresenter::CLI
 
   def call
-
     input = ""
 
     until input == 'exit'
