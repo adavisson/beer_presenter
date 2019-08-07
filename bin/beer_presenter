@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require './lib/beer_presenter'
+require '../lib/beer_presenter'
 
 #Create instance of scraper and scrape the webpage for information
 scraper = BeerPresenter::Scraper.new
