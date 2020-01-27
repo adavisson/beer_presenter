@@ -6,6 +6,7 @@ class BeerPresenter::CLI
     input = ""
 
     until input == 'exit'
+      # system("clear")
       puts "\n\nWelcome to Top 50 Beers on Untappd".colorize(:green)
       puts "To list all of the Top 50 rated beers, please type" + " 'all'".colorize(:blue) + ":"
       puts "To list all of the beers with full detail, please type" + " 'full detail'".colorize(:blue) + ":"
@@ -14,6 +15,7 @@ class BeerPresenter::CLI
       puts "To exit, please type 'exit':\n\n".colorize(:red)
   
       input = gets.strip
+      system("clear")
   
       case input
       when 'all'
@@ -45,6 +47,7 @@ class BeerPresenter::CLI
   
       case input
       when 'exit'
+        system("clear")
         break
       else
         BeerPresenter::Beer.beer_detail(input.to_i)
@@ -64,6 +67,7 @@ class BeerPresenter::CLI
 
       case input
       when 'exit'
+        system("clear")
         break
       else
         BeerPresenter::Style.style_detail(input.to_i)
@@ -82,6 +86,7 @@ class BeerPresenter::CLI
 
       case input
       when 'exit'
+        system("clear")
         break
       else
         BeerPresenter::Brewery.brewery_detail(input.to_i)
