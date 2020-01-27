@@ -1,15 +1,17 @@
+require 'colorize'
+
 class BeerPresenter::CLI
 
   def call
     input = ""
 
     until input == 'exit'
-      puts "\n\nWelcome to Top 50 Beers on Untappd"
-      puts "To list all of the Top 50 rated beers, please type 'all':"
-      puts "To list all of the beers with full detail, please type 'full detail':"
-      puts "To list all of the styles that are included in the Top 50, please type 'styles':"
-      puts "To list all of the breweries that have beers in the Top 50, please type 'breweries':"
-      puts "To exit, please type 'exit':\n\n"
+      puts "\n\nWelcome to Top 50 Beers on Untappd".colorize(:green)
+      puts "To list all of the Top 50 rated beers, please type" + " 'all'".colorize(:blue) + ":"
+      puts "To list all of the beers with full detail, please type" + " 'full detail'".colorize(:blue) + ":"
+      puts "To list all of the styles that are included in the Top 50, please type" + " 'styles'".colorize(:blue) + ":"
+      puts "To list all of the breweries that have beers in the Top 50, please type" + " 'breweries'".colorize(:blue) + ":"
+      puts "To exit, please type 'exit':\n\n".colorize(:red)
   
       input = gets.strip
   
@@ -37,7 +39,7 @@ class BeerPresenter::CLI
     until input == 'exit'
       puts "\n\n"
       puts "To get the full detail on a specific beer, please select the number of the beer:"
-      puts "Otherwise, to exit to the main menu, please type 'exit':\n\n"
+      puts "Otherwise, to exit to the main menu, please type" + " 'exit'".colorize(:red) + ":\n\n"
   
       input = gets.strip
   
@@ -56,7 +58,7 @@ class BeerPresenter::CLI
     until input == 'exit'
       puts "\n\n"
       puts "To list all of the beers of a certain style, please select the number of the style:"
-      puts "Otherwise, to exit to the main menu, please type 'exit':\n\n"
+      puts "Otherwise, to exit to the main menu, please type" + " 'exit'".colorize(:red) + ":\n\n"
 
       input = gets.strip
 
@@ -73,8 +75,8 @@ class BeerPresenter::CLI
     input = ""
     until input == 'exit'
       puts "\n\n"
-      puts "To list all of the beers from a specific brewery, please select the number of the style:"
-      puts "Otherwise, to exit to the main menu, please type 'exit':\n\n"
+      puts "To list all of the beers from a specific brewery, please select the number of the brewery:"
+      puts "Otherwise, to exit to the main menu, please type" + " 'exit'".colorize(:red) + ":\n\n"
 
       input = gets.strip
 
@@ -90,7 +92,7 @@ class BeerPresenter::CLI
   def list_beers
     index = 1
     puts "\n\n"
-    BeerPresenter::Beer.all.each{|beer| puts "#{index})\t#{beer.name} - #{beer.style.name} - #{beer.brewery.name}"
+    BeerPresenter::Beer.all.each{|beer| puts "#{index})\t" + "#{beer.name}".colorize(:light_blue) + " - #{beer.style.name} - #{beer.brewery.name}"
     index += 1
     }
     beer_menu
@@ -98,18 +100,18 @@ class BeerPresenter::CLI
 
   def full_detail
     index = 1
-    BeerPresenter::Beer.all.each{|beer| puts "#{index})\tName: #{beer.name}"
+    BeerPresenter::Beer.all.each{|beer| puts "#{index})\t" + "Name: " + "#{beer.name}".colorize(:light_blue)
                                             puts "\tStyle: #{beer.style.name}"
                                             puts "\tBrewery: #{beer.brewery.name}"
                                             puts "\tDescription: #{beer.description}"
-                                            puts "\tRating: #{beer.rating}\n\n"
+                                            puts "\tRating: " + "#{beer.rating}\n\n".colorize(:red)
                                             index += 1
     }
   end
 
   def list_styles
     index = 1
-    BeerPresenter::Style.all.each{|style| puts "#{index})\t#{style.name}"
+    BeerPresenter::Style.all.each{|style| puts "#{index})\t" + "#{style.name}".colorize(:light_blue)
     index += 1
     }
     style_menu
@@ -117,7 +119,7 @@ class BeerPresenter::CLI
 
   def list_breweries
     index = 1
-    BeerPresenter::Brewery.all.each{|brewery| puts "#{index})\t#{brewery.name}"
+    BeerPresenter::Brewery.all.each{|brewery| puts "#{index})\t" + "#{brewery.name}".colorize(:light_blue)
     index += 1
     }
     brewery_menu

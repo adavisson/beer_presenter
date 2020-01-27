@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    beer_presenter (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  beer_presenter!
+  bundler (~> 2.0)
+  nokogiri
+  rake (~> 10.0)
+
+BUNDLED WITH
+   2.1.4

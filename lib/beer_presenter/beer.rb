@@ -1,3 +1,5 @@
+#require 'colorize'
+
 class BeerPresenter::Beer
 
   extend BeerPresenter::Common::ClassMethods
@@ -31,11 +33,11 @@ class BeerPresenter::Beer
   def self.beer_detail(index)
     if self.bounds_check(index)
       puts "\n\n"
-      puts "#{index})\tName: #{self.all[index - 1].name}"
+      puts "#{index})\tName: " + "#{self.all[index - 1].name}".colorize(:light_blue)
       puts "\tStyle: #{self.all[index - 1].style.name}"
       puts "\tBrewery: #{self.all[index - 1].name}"
       puts "\tDescription: #{self.all[index - 1].description}"
-      puts "\tRating: #{self.all[index - 1].rating}\n\n"
+      puts "\tRating: " + "#{self.all[index - 1].rating}\n\n".colorize(:red)
     else
       puts "\n\nThe number you entered is invalid. Please try again"
     end

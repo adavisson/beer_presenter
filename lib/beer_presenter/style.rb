@@ -20,10 +20,10 @@ class BeerPresenter::Style
   def self.style_detail(index)
     if self.bounds_check(index)
       puts "\n\n"
-      puts "#{index})\t #{self.all[index - 1].name}"
+      puts "#{index})\t" + "#{self.all[index - 1].name}".colorize(:light_blue)
       puts "\tBeers:"
       self.all[index - 1].beers.each do |beer|
-        puts "\t\t#{beer.name} - #{beer.brewery.name}"
+        puts "\t\t#{beer.name}".colorize(:light_blue) + " - #{beer.brewery.name}"
       end
     else
       puts "\n\nThe number you entered is invalid. Please try again."

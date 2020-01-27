@@ -4,4 +4,5 @@ source "https://rubygems.org"
 gemspec
 
 gem 'nokogiri'
-gem 'open-uri'
+#gem 'open-uri'
+gem 'colorize', '~> 0.7.7'
