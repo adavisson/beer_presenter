@@ -35,7 +35,7 @@ class BeerPresenter::Beer
       puts "\n\n"
       puts "#{index})\tName: " + "#{self.all[index - 1].name}".colorize(:light_blue)
       puts "\tStyle: #{self.all[index - 1].style.name}"
-      puts "\tBrewery: #{self.all[index - 1].name}"
+      puts "\tBrewery: #{self.all[index - 1].brewery.name}"
       puts "\tDescription: #{self.all[index - 1].description}"
       puts "\tRating: " + "#{self.all[index - 1].rating}\n\n".colorize(:red)
     else
