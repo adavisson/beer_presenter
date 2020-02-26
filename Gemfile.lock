@@ -6,8 +6,9 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    colorize (0.7.7)
     mini_portile2 (2.4.0)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     rake (10.5.0)
 
@@ -17,6 +18,7 @@ PLATFORMS
 DEPENDENCIES
   beer_presenter!
   bundler (~> 2.0)
+  colorize (~> 0.7.7)
   nokogiri
   rake (~> 10.0)
 
